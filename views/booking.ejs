@@ -1,0 +1,113 @@
+<%- include('partials/header') %>
+
+    <section class="page-hero">
+        <div class="container">
+            <span class="section-tag reveal">SCHEDULE</span>
+            <h1 class="reveal">Book an Appointment</h1>
+            <p class="page-subtitle reveal">Fill out the form below and our team will confirm your appointment within 24
+                hours.</p>
+        </div>
+    </section>
+
+    <section class="booking-section">
+        <div class="container">
+            <div class="booking-grid">
+                <div class="booking-form-wrapper reveal">
+                    <form id="bookingForm" class="form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="customer_name">Full Name *</label>
+                                <input type="text" id="customer_name" name="customer_name" placeholder="John Doe"
+                                    required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" name="email" placeholder="john@example.com" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="phone">Phone Number *</label>
+                                <input type="tel" id="phone" name="phone" placeholder="(555) 123-4567" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="preferred_date">Preferred Date</label>
+                                <input type="date" id="preferred_date" name="preferred_date">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="package_id">Select Package</label>
+                            <select id="package_id" name="package_id">
+                                <option value="">-- Choose a package --</option>
+                                <% packages.forEach(pkg=> { %>
+                                    <option value="<%= pkg.id %>" <%=(typeof selectedPackage !=='undefined' &&
+                                        selectedPackage==pkg.id) ? 'selected' : '' %>>
+                                        <%= pkg.name %> — $<%= Number(pkg.price).toLocaleString() %>
+                                    </option>
+                                    <% }); %>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Additional Notes</label>
+                            <textarea id="message" name="message" rows="4"
+                                placeholder="Tell us about your vehicle, any specific concerns, or questions..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block btn-lg" id="bookingSubmit">
+                            <span class="btn-text">Submit Appointment Request</span>
+                            <span class="btn-loader" style="display:none;">Submitting...</span>
+                        </button>
+                        <div id="bookingFeedback" class="form-feedback"></div>
+                    </form>
+                </div>
+
+                <div class="booking-info reveal" data-delay="200">
+                    <div class="info-box">
+                        <h3>What to Expect</h3>
+                        <div class="expect-step">
+                            <div class="expect-number">1</div>
+                            <div>
+                                <h4>Submit Request</h4>
+                                <p>Fill out the form with your details and preferred date.</p>
+                            </div>
+                        </div>
+                        <div class="expect-step">
+                            <div class="expect-number">2</div>
+                            <div>
+                                <h4>Confirmation Call</h4>
+                                <p>Our team will call you within 24 hours to confirm.</p>
+                            </div>
+                        </div>
+                        <div class="expect-step">
+                            <div class="expect-number">3</div>
+                            <div>
+                                <h4>Vehicle Drop-off</h4>
+                                <p>Bring your vehicle to our studio on the scheduled date.</p>
+                            </div>
+                        </div>
+                        <div class="expect-step">
+                            <div class="expect-number">4</div>
+                            <div>
+                                <h4>Shine & Collect</h4>
+                                <p>Pick up your freshly coated, showroom-ready vehicle!</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="info-box contact-quick">
+                        <h3>Need It Sooner?</h3>
+                        <p>Call us directly for same-day availability.</p>
+                        <a href="tel:+15551234567" class="btn btn-primary btn-block">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path
+                                    d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" />
+                            </svg>
+                            (555) 123-4567
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <%- include('partials/footer') %>

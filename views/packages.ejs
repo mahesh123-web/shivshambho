@@ -1,0 +1,104 @@
+<%- include('partials/header') %>
+
+    <section class="page-hero">
+        <div class="container">
+            <span class="section-tag reveal">PRICING</span>
+            <h1 class="reveal">Protection Packages</h1>
+            <p class="page-subtitle reveal">Choose the level of protection that fits your driving habits and budget. All
+                packages include a full exterior decontamination.</p>
+        </div>
+    </section>
+
+    <section class="packages-page">
+        <div class="container">
+            <div class="packages-grid">
+                <% packages.forEach((pkg, index)=> { %>
+                    <div class="package-card reveal <%= pkg.is_popular ? 'popular' : '' %>"
+                        data-delay="<%= index * 100 %>">
+                        <% if (pkg.is_popular) { %>
+                            <div class="popular-badge">MOST POPULAR</div>
+                            <% } %>
+                                <div class="package-header">
+                                    <h3>
+                                        <%= pkg.name %>
+                                    </h3>
+                                    <p class="package-tagline">
+                                        <%= pkg.tagline %>
+                                    </p>
+                                    <div class="package-price">
+                                        <span class="price">$<%= Number(pkg.price).toLocaleString() %></span>
+                                        <span class="duration">/ <%= pkg.duration %></span>
+                                    </div>
+                                </div>
+                                <ul class="package-features">
+                                    <% pkg.features.forEach(feature=> { %>
+                                        <li>
+                                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                                stroke="<%= pkg.is_popular ? '#0ea5e9' : '#22c55e' %>"
+                                                stroke-width="2.5">
+                                                <path d="M20 6L9 17l-5-5" />
+                                            </svg>
+                                            <%= feature %>
+                                        </li>
+                                        <% }); %>
+                                </ul>
+                                <a href="/booking?package=<%= pkg.id %>"
+                                    class="btn <%= pkg.is_popular ? 'btn-primary' : 'btn-outline' %> btn-block">Select
+                                    Plan</a>
+                    </div>
+                    <% }); %>
+            </div>
+
+            <!-- Additional Info -->
+            <div class="packages-info reveal">
+                <div class="info-card">
+                    <div class="info-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.5">
+                            <path
+                                d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                        </svg>
+                    </div>
+                    <h4>Warranty Included</h4>
+                    <p>All packages come with a manufacturer-backed warranty for your peace of mind.</p>
+                </div>
+                <div class="info-card">
+                    <div class="info-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.5">
+                            <path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </div>
+                    <h4>Quick Turnaround</h4>
+                    <p>Most jobs completed within 1-3 days depending on the package selected.</p>
+                </div>
+                <div class="info-card">
+                    <div class="info-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.5">
+                            <path
+                                d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+                        </svg>
+                    </div>
+                    <h4>Premium Products</h4>
+                    <p>We use only certified, professional-grade ceramic coating products.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-banner">
+        <div class="container">
+            <div class="cta-content reveal">
+                <h2>Not Sure Which Package?</h2>
+                <p>Contact us for a free consultation and we'll recommend the perfect package for your vehicle.</p>
+                <div class="cta-buttons">
+                    <a href="/contact" class="btn btn-white">Get Free Consultation</a>
+                    <a href="tel:+15551234567" class="btn btn-outline-white">Call (555) 123-4567</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <%- include('partials/footer') %>

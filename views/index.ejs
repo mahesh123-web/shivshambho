@@ -1,0 +1,272 @@
+<%- include('partials/header') %>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-bg">
+            <div class="hero-particles"></div>
+        </div>
+        <div class="container hero-content">
+            <div class="hero-text">
+                <span class="hero-badge reveal">ELITE PAINT PROTECTION</span>
+                <h1 class="reveal">Ultra-Gloss Nano<br>Protection</h1>
+                <p class="hero-description reveal">Defend your investment against the elements with our
+                    professional-grade ceramic coatings. Mirror-like shine that lasts for years.</p>
+                <div class="hero-buttons reveal">
+                    <a href="/packages" class="btn btn-primary">View Packages</a>
+                    <a href="/#technology" class="btn btn-outline">Learn More</a>
+                </div>
+                <div class="hero-stats reveal">
+                    <div class="stat">
+                        <span class="stat-number">9H</span>
+                        <span class="stat-label">Hardness Rating</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">10+</span>
+                        <span class="stat-label">Years Experience</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">2000+</span>
+                        <span class="stat-label">Cars Protected</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual reveal">
+                <div class="hero-glow"></div>
+                <div class="hero-car-graphic">
+                    <svg viewBox="0 0 500 300" xmlns="http://www.w3.org/2000/svg" class="car-svg">
+                        <!-- Car body -->
+                        <defs>
+                            <linearGradient id="carGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#1e293b" />
+                                <stop offset="50%" style="stop-color:#334155" />
+                                <stop offset="100%" style="stop-color:#1e293b" />
+                            </linearGradient>
+                            <linearGradient id="shineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" style="stop-color:rgba(14,165,233,0)" />
+                                <stop offset="50%" style="stop-color:rgba(14,165,233,0.4)" />
+                                <stop offset="100%" style="stop-color:rgba(14,165,233,0)" />
+                            </linearGradient>
+                        </defs>
+                        <!-- Car silhouette -->
+                        <path
+                            d="M60 200 Q60 180 80 170 L140 170 L180 130 Q190 120 210 120 L320 120 Q340 120 350 130 L390 170 L440 170 Q460 170 460 190 L460 210 Q460 220 450 220 L60 220 Q50 220 50 210 Z"
+                            fill="url(#carGradient)" stroke="#334155" stroke-width="1" />
+                        <!-- Windows -->
+                        <path d="M190 135 L175 168 L250 168 L250 128 Q240 125 230 125 Z" fill="#0f172a" stroke="#475569"
+                            stroke-width="0.5" opacity="0.8" />
+                        <path d="M260 125 L260 168 L370 168 L340 135 Q330 125 320 125 Z" fill="#0f172a" stroke="#475569"
+                            stroke-width="0.5" opacity="0.8" />
+                        <!-- Shine line -->
+                        <path d="M80 175 Q250 160 440 175" stroke="url(#shineGradient)" stroke-width="2" fill="none"
+                            class="shine-line" />
+                        <!-- Wheels -->
+                        <circle cx="150" cy="220" r="28" fill="#0f172a" stroke="#334155" stroke-width="2" />
+                        <circle cx="150" cy="220" r="18" fill="#1e293b" stroke="#475569" stroke-width="1" />
+                        <circle cx="150" cy="220" r="5" fill="#0ea5e9" />
+                        <circle cx="380" cy="220" r="28" fill="#0f172a" stroke="#334155" stroke-width="2" />
+                        <circle cx="380" cy="220" r="18" fill="#1e293b" stroke="#475569" stroke-width="1" />
+                        <circle cx="380" cy="220" r="5" fill="#0ea5e9" />
+                        <!-- Headlight -->
+                        <ellipse cx="450" cy="185" rx="8" ry="12" fill="#0ea5e9" opacity="0.8" />
+                        <!-- Taillight -->
+                        <rect x="60" y="178" width="12" height="8" rx="2" fill="#ef4444" opacity="0.8" />
+                        <!-- Ground reflection -->
+                        <rect x="50" y="250" width="420" height="2" rx="1" fill="url(#shineGradient)" opacity="0.3" />
+                    </svg>
+                    <div class="badge-9h">
+                        <span class="badge-number">9H</span>
+                        <span class="badge-text">HARDNESS<br>RATING</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technology Section -->
+    <section class="technology" id="technology">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">OUR TECHNOLOGY</span>
+                <h2>Advanced Nano-Ceramic Technology</h2>
+                <p class="section-subtitle">Our advanced nano-ceramic technology creates a permanent or semi-permanent
+                    bond with your vehicle's paint. This sacrificial layer protects against UV rays, chemical stains,
+                    and environmental contaminants.</p>
+            </div>
+            <div class="tech-grid">
+                <div class="tech-card reveal" data-delay="0">
+                    <div class="tech-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.5">
+                            <circle cx="12" cy="12" r="5" />
+                            <line x1="12" y1="1" x2="12" y2="3" />
+                            <line x1="12" y1="21" x2="12" y2="23" />
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+                            <line x1="1" y1="12" x2="3" y2="12" />
+                            <line x1="21" y1="12" x2="23" y2="12" />
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+                        </svg>
+                    </div>
+                    <h3>UV Protection</h3>
+                    <p>Prevents paint oxidation and fading from harsh sun exposure.</p>
+                </div>
+                <div class="tech-card reveal" data-delay="100">
+                    <div class="tech-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.5">
+                            <path d="M12 2.69l5.66 5.66a8 8 0 11-11.31 0z" />
+                        </svg>
+                    </div>
+                    <h3>Hydrophobic</h3>
+                    <p>Self-cleaning properties that repel water, mud, and grime.</p>
+                </div>
+                <div class="tech-card reveal" data-delay="200">
+                    <div class="tech-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.5">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                        </svg>
+                    </div>
+                    <h3>Scratch Resistance</h3>
+                    <p>9H hardness rating to minimize swirl marks and light scratches.</p>
+                </div>
+                <div class="tech-card reveal" data-delay="300">
+                    <div class="tech-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.5">
+                            <polygon
+                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                        </svg>
+                    </div>
+                    <h3>Deep Gloss</h3>
+                    <p>Enhances paint depth for a permanent wet-look shine.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Packages Preview -->
+    <section class="packages-section" id="packages-preview">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">PRICING</span>
+                <h2>Protection Packages</h2>
+                <p class="section-subtitle">Choose the level of protection that fits your driving habits and budget. All
+                    packages include a full exterior decontamination.</p>
+            </div>
+            <div class="packages-grid">
+                <% packages.forEach((pkg, index)=> { %>
+                    <div class="package-card reveal <%= pkg.is_popular ? 'popular' : '' %>"
+                        data-delay="<%= index * 100 %>">
+                        <% if (pkg.is_popular) { %>
+                            <div class="popular-badge">MOST POPULAR</div>
+                            <% } %>
+                                <div class="package-header">
+                                    <h3>
+                                        <%= pkg.name %>
+                                    </h3>
+                                    <p class="package-tagline">
+                                        <%= pkg.tagline %>
+                                    </p>
+                                    <div class="package-price">
+                                        <span class="price">$<%= Number(pkg.price).toLocaleString() %></span>
+                                        <span class="duration">/ <%= pkg.duration %></span>
+                                    </div>
+                                </div>
+                                <ul class="package-features">
+                                    <% pkg.features.forEach(feature=> { %>
+                                        <li>
+                                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                                stroke="<%= pkg.is_popular ? '#0ea5e9' : '#22c55e' %>"
+                                                stroke-width="2.5">
+                                                <path d="M20 6L9 17l-5-5" />
+                                            </svg>
+                                            <%= feature %>
+                                        </li>
+                                        <% }); %>
+                                </ul>
+                                <a href="/booking?package=<%= pkg.id %>"
+                                    class="btn <%= pkg.is_popular ? 'btn-primary' : 'btn-outline' %> btn-block">Select
+                                    Plan</a>
+                    </div>
+                    <% }); %>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process" id="process">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">HOW IT WORKS</span>
+                <h2>Our Precision Process</h2>
+            </div>
+            <div class="process-grid">
+                <% services.forEach((service, index)=> { %>
+                    <div class="process-step reveal" data-delay="<%= index * 150 %>">
+                        <div class="step-icon">
+                            <% if (service.icon==='clean' ) { %>
+                                <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="1.5">
+                                    <path
+                                        d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3" />
+                                </svg>
+                                <% } else if (service.icon==='polish' ) { %>
+                                    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="1.5">
+                                        <path
+                                            d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                                    </svg>
+                                    <% } else if (service.icon==='coating' ) { %>
+                                        <svg width="36" height="36" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor" stroke-width="1.5">
+                                            <path
+                                                d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                                        </svg>
+                                        <% } else { %>
+                                            <svg width="36" height="36" viewBox="0 0 24 24" fill="none"
+                                                stroke="currentColor" stroke-width="1.5">
+                                                <circle cx="12" cy="12" r="5" />
+                                                <line x1="12" y1="1" x2="12" y2="3" />
+                                                <line x1="12" y1="21" x2="12" y2="23" />
+                                                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+                                                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+                                                <line x1="1" y1="12" x2="3" y2="12" />
+                                                <line x1="21" y1="12" x2="23" y2="12" />
+                                                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+                                                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+                                            </svg>
+                                            <% } %>
+                        </div>
+                        <div class="step-number">
+                            <%= service.step_number %>
+                        </div>
+                        <h3>
+                            <%= service.title %>
+                        </h3>
+                        <p>
+                            <%= service.description %>
+                        </p>
+                    </div>
+                    <% }); %>
+            </div>
+            <div class="process-connector reveal"></div>
+        </div>
+    </section>
+
+    <!-- CTA Banner -->
+    <section class="cta-banner">
+        <div class="container">
+            <div class="cta-content reveal">
+                <h2>Ready to Transform Your Vehicle?</h2>
+                <p>Get a free quote and professional consultation for your car today. Slots fill up fast!</p>
+                <div class="cta-buttons">
+                    <a href="/booking" class="btn btn-white">Book Appointment</a>
+                    <a href="tel:+15551234567" class="btn btn-outline-white">Call (555) 123-4567</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <%- include('partials/footer') %>
