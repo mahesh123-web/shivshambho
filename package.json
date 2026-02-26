@@ -7,13 +7,17 @@
     "start": "node server.js",
     "dev": "node server.js"
   },
-  "keywords": ["ceramic-coating", "auto-detailing", "nodejs"],
+  "keywords": [
+    "ceramic-coating",
+    "auto-detailing",
+    "nodejs"
+  ],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "dotenv": "^17.3.1",
     "ejs": "^4.0.1",
     "express": "^5.2.1",
-    "mysql2": "^3.18.0"
+    "pg": "^8.13.0"
   }
 }

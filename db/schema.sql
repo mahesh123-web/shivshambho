@@ -1,10 +1,8 @@
--- Ceramic Coating Studio Database Schema
-CREATE DATABASE IF NOT EXISTS ceramic_coating_studio;
-USE ceramic_coating_studio;
+-- Ceramic Coating Studio Database Schema (PostgreSQL / Supabase)
 
 -- Packages table
 CREATE TABLE IF NOT EXISTS packages (
-    id INT AUTO_INCREMENT PRIMARY KEY,
+    id SERIAL PRIMARY KEY,
     name VARCHAR(100) NOT NULL,
     tagline VARCHAR(255),
     price DECIMAL(10,2) NOT NULL,
@@ -17,7 +15,7 @@ CREATE TABLE IF NOT EXISTS packages (
 
 -- Services / Process Steps
 CREATE TABLE IF NOT EXISTS services (
-    id INT AUTO_INCREMENT PRIMARY KEY,
+    id SERIAL PRIMARY KEY,
     step_number INT NOT NULL,
     title VARCHAR(100) NOT NULL,
     description TEXT,
@@ -28,21 +26,21 @@ CREATE TABLE IF NOT EXISTS services (
 
 -- Bookings (appointment requests)
 CREATE TABLE IF NOT EXISTS bookings (
-    id INT AUTO_INCREMENT PRIMARY KEY,
+    id SERIAL PRIMARY KEY,
     customer_name VARCHAR(150) NOT NULL,
     email VARCHAR(255) NOT NULL,
     phone VARCHAR(30),
     preferred_date DATE,
     package_id INT,
     message TEXT,
-    status ENUM('pending','confirmed','completed','cancelled') DEFAULT 'pending',
+    status VARCHAR(20) DEFAULT 'pending' CHECK (status IN ('pending','confirmed','completed','cancelled')),
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (package_id) REFERENCES packages(id) ON DELETE SET NULL
 );
 
 -- Contact messages
 CREATE TABLE IF NOT EXISTS contacts (
-    id INT AUTO_INCREMENT PRIMARY KEY,
+    id SERIAL PRIMARY KEY,
     name VARCHAR(150) NOT NULL,
     email VARCHAR(255) NOT NULL,
     subject VARCHAR(255),

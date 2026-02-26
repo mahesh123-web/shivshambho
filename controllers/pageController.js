@@ -3,10 +3,10 @@ const db = require('../config/db');
 // Home page
 exports.getHome = async (req, res) => {
     try {
-        const [packages] = await db.query('SELECT * FROM packages ORDER BY sort_order');
-        const [services] = await db.query('SELECT * FROM services ORDER BY sort_order');
+        const { rows: packages } = await db.query('SELECT * FROM packages ORDER BY sort_order');
+        const { rows: services } = await db.query('SELECT * FROM services ORDER BY sort_order');
 
-        // Parse JSON features
+        // Parse JSON features if stored as string
         packages.forEach(pkg => {
             if (typeof pkg.features === 'string') {
                 pkg.features = JSON.parse(pkg.features);
@@ -32,7 +32,7 @@ exports.getHome = async (req, res) => {
 // Packages page
 exports.getPackages = async (req, res) => {
     try {
-        const [packages] = await db.query('SELECT * FROM packages ORDER BY sort_order');
+        const { rows: packages } = await db.query('SELECT * FROM packages ORDER BY sort_order');
         packages.forEach(pkg => {
             if (typeof pkg.features === 'string') {
                 pkg.features = JSON.parse(pkg.features);
@@ -54,7 +54,7 @@ exports.getPackages = async (req, res) => {
 // Booking page
 exports.getBooking = async (req, res) => {
     try {
-        const [packages] = await db.query('SELECT id, name, price FROM packages ORDER BY sort_order');
+        const { rows: packages } = await db.query('SELECT id, name, price FROM packages ORDER BY sort_order');
         res.render('booking', {
             title: 'Book an Appointment | Ceramic Coating Studio',
             packages

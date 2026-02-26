@@ -13,15 +13,15 @@ exports.createBooking = async (req, res) => {
             });
         }
 
-        const [result] = await db.query(
-            'INSERT INTO bookings (customer_name, email, phone, preferred_date, package_id, message) VALUES (?, ?, ?, ?, ?, ?)',
+        const result = await db.query(
+            'INSERT INTO bookings (customer_name, email, phone, preferred_date, package_id, message) VALUES ($1, $2, $3, $4, $5, $6) RETURNING id',
             [customer_name, email, phone, preferred_date || null, package_id || null, message || null]
         );
 
         res.status(201).json({
             success: true,
             message: 'Appointment request submitted successfully! We will contact you shortly.',
-            bookingId: result.insertId
+            bookingId: result.rows[0].id
         });
     } catch (error) {
         console.error('Booking error:', error);
@@ -44,15 +44,15 @@ exports.createContact = async (req, res) => {
             });
         }
 
-        const [result] = await db.query(
-            'INSERT INTO contacts (name, email, subject, message) VALUES (?, ?, ?, ?)',
+        const result = await db.query(
+            'INSERT INTO contacts (name, email, subject, message) VALUES ($1, $2, $3, $4) RETURNING id',
             [name, email, subject || null, message]
         );
 
         res.status(201).json({
             success: true,
             message: 'Message sent successfully! We\'ll get back to you within 24 hours.',
-            contactId: result.insertId
+            contactId: result.rows[0].id
         });
     } catch (error) {
         console.error('Contact error:', error);
