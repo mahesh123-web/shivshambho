@@ -24,7 +24,13 @@ exports.createBooking = async (req, res) => {
             bookingId: result.rows[0].id
         });
     } catch (error) {
-        console.error('Booking error:', error);
+        console.error('Booking error:', error.message);
+        console.error('Booking error details:', JSON.stringify({
+            code: error.code,
+            detail: error.detail,
+            table: error.table,
+            constraint: error.constraint
+        }));
         res.status(500).json({
             success: false,
             message: 'Failed to submit booking. Please try again or call us directly.'

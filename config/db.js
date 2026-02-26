@@ -13,7 +13,7 @@ if (connectionString) {
 
     if (match) {
         const [, user, password, host, port, database] = match;
-        console.log(`Connecting to PostgreSQL at ${host}:${port}...`);
+        console.log(`Connecting to PostgreSQL at ${host}:${port} as ${user}...`);
         pool = new Pool({
             user,
             password,
@@ -23,7 +23,6 @@ if (connectionString) {
             ssl: { rejectUnauthorized: false }
         });
     } else {
-        // Fallback: try using connectionString directly
         console.log('Using DATABASE_URL connection string directly...');
         pool = new Pool({
             connectionString,
@@ -42,12 +41,13 @@ if (connectionString) {
     });
 }
 
-pool.on('connect', () => {
-    console.log('✅ Connected to Supabase PostgreSQL');
-});
+// Test connection on startup
+pool.query('SELECT NOW()')
+    .then(res => console.log('✅ DB connected at:', res.rows[0].now))
+    .catch(err => console.error('❌ DB connection test failed:', err.message));
 
 pool.on('error', (err) => {
-    console.error('❌ Database connection error:', err.message);
+    console.error('❌ Database pool error:', err.message);
 });
 
 module.exports = pool;
