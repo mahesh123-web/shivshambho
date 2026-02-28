@@ -91,13 +91,45 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- URL query param: pre-select package ---
+    // --- Package sub-options toggle ---
+    document.querySelectorAll('.package-toggle-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const card = btn.closest('.package-card');
+            const panel = card.querySelector('.sub-options-panel');
+            const isOpen = panel.classList.contains('open');
+
+            // Close all other panels first
+            document.querySelectorAll('.sub-options-panel.open').forEach(p => {
+                p.classList.remove('open');
+                p.closest('.package-card').querySelector('.package-toggle-btn').classList.remove('active');
+                p.closest('.package-card').querySelector('.btn-text-toggle').textContent = 'View Options';
+            });
+
+            // Toggle current panel
+            if (!isOpen) {
+                panel.classList.add('open');
+                btn.classList.add('active');
+                btn.querySelector('.btn-text-toggle').textContent = 'Hide Options';
+            }
+        });
+    });
+
+    // --- URL query param: pre-select package & vehicle type ---
     const urlParams = new URLSearchParams(window.location.search);
     const packageParam = urlParams.get('package');
     if (packageParam) {
         const packageSelect = document.getElementById('package_id');
         if (packageSelect) {
             packageSelect.value = packageParam;
+        }
+    }
+
+    const vehicleParam = urlParams.get('vehicle');
+    if (vehicleParam) {
+        const vehicleSelect = document.getElementById('vehicle_type');
+        if (vehicleSelect) {
+            vehicleSelect.value = vehicleParam;
         }
     }
 

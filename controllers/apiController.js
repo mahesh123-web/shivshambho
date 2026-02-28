@@ -3,7 +3,7 @@ const db = require('../config/db');
 // Create a booking
 exports.createBooking = async (req, res) => {
     try {
-        const { customer_name, email, phone, preferred_date, package_id, message } = req.body;
+        const { customer_name, email, phone, preferred_date, package_id, vehicle_type, message } = req.body;
 
         // Basic validation
         if (!customer_name || !email || !phone) {
@@ -14,8 +14,8 @@ exports.createBooking = async (req, res) => {
         }
 
         const result = await db.query(
-            'INSERT INTO bookings (customer_name, email, phone, preferred_date, package_id, message) VALUES ($1, $2, $3, $4, $5, $6) RETURNING id',
-            [customer_name, email, phone, preferred_date || null, package_id || null, message || null]
+            'INSERT INTO bookings (customer_name, email, phone, preferred_date, package_id, vehicle_type, message) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING id',
+            [customer_name, email, phone, preferred_date || null, package_id || null, vehicle_type || null, message || null]
         );
 
         res.status(201).json({

@@ -32,6 +32,7 @@ CREATE TABLE IF NOT EXISTS bookings (
     phone VARCHAR(30),
     preferred_date DATE,
     package_id INT,
+    vehicle_type VARCHAR(50),
     message TEXT,
     status VARCHAR(20) DEFAULT 'pending' CHECK (status IN ('pending','confirmed','completed','cancelled')),
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
