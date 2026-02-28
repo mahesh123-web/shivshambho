@@ -53,11 +53,25 @@
                                 </button>
                                 <div class="sub-options-panel" id="subPanel-pkg-<%= pkg.id %>">
                                     <div class="sub-options-grid">
-                                        <% let vehicleTypes=[]; if (pkg.name==='Essential' )
-                                            vehicleTypes=['Bike', 'Hatchback' , 'Sedan' , 'SUV' ]; else if
-                                            (pkg.name==='Professional' ) vehicleTypes=['Bike', 'Hatchback' , 'Sedan'
-                                            , 'SUV' , 'Luxury' ]; else if (pkg.name==='Signature' )
-                                            vehicleTypes=['Standard', 'Premium' ]; vehicleTypes.forEach(vt=> { %>
+                                        <% const vehicleData={ 'Two Wheelers' : { 'Bike' : [ '₹ 2000' , '9H Ceramic'
+                                            ], 'Hatchback' : [ '₹ 3000' , '10H Ceramic' ], 'Sedan' : [ '₹ 4500'
+                                            , 'GRAPHENE MATRIX' ], 'SUV' : [ '₹ 6500' , 'BOROPHENE NEXT-GEN DURABILITY'
+                                            , 'Kovalent Ceramic Coatings' ] }, 'Four Wheelers' : { 'Bike' :
+                                            [ '₹ 6000' , 'Rubbing'
+                                            , 'Polish' ], 'Hatchback' : [ '₹ 12000'
+                                            , 'Rubbing and Polish' , 'Graphene Ceramic Coating' ], 'Sedan' :
+                                            [ '₹ 18000' , 'Rubbing and Polish'
+                                            , 'Koch Chemie Ceramic Coating' ], 'SUV' : [ '₹ 23000'
+                                            , 'GRAPHENE MATRIX' , 'Self-healing Graphene Coating' ], 'Luxury' :
+                                            [ '₹ 28000' , 'BOROPHENE NEXT-GEN DURABILITY'
+                                            , 'Kovalent Ceramic Coatings' ] }, 'Tractors' : { 'Standard' :
+                                            [ '₹ 5000' , 'Rubbing'
+                                            , 'Coating'], 'Premium' : [ '₹ 7000'
+                                            , 'Rubbing and Coating' , 'Ceramic Coating'] } }; const
+                                            vehicleTypes=vehicleData[pkg.name] || {};
+                                            Object.keys(vehicleTypes).forEach(vt=> {
+                                            const details = vehicleTypes[vt];
+                                            %>
                                             <a href="/booking?package=<%= pkg.id %>&vehicle=<%= encodeURIComponent(vt) %>"
                                                 class="sub-option-box">
                                                 <div class="sub-option-icon">
@@ -121,6 +135,13 @@
                                                 <span class="sub-option-label">
                                                     <%= vt %>
                                                 </span>
+                                                <ul class="sub-option-details">
+                                                    <% details.forEach(line=> { %>
+                                                        <li>
+                                                            <%= line %>
+                                                        </li>
+                                                        <% }); %>
+                                                </ul>
                                             </a>
                                             <% }); %>
                                     </div>
@@ -175,7 +196,7 @@
                 <p>Contact us for a free consultation and we'll recommend the perfect package for your vehicle.</p>
                 <div class="cta-buttons">
                     <a href="/contact" class="btn btn-white">Get Free Consultation</a>
-                    <a href="9860349257" class="btn btn-outline-white">Call 9860349257</a>
+                    <a href="tel:9860349257" class="btn btn-outline-white">Call 9860349257</a>
                 </div>
             </div>
         </div>

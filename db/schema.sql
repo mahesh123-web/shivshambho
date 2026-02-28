@@ -53,29 +53,29 @@ CREATE TABLE IF NOT EXISTS contacts (
 -- Seed data: Packages
 INSERT INTO packages (name, tagline, price, duration, features, is_popular, sort_order) VALUES
 (
-    'Essential',
-    'Perfect for daily drivers',
-    599.00,
-    '2-Year',
-    '["1 Layer of Nano Coating", "Paint Decontamination", "High Gloss Finish", "Glass & Wheel Coating"]',
+    'Two Wheelers',
+    'Perfect for Two Wheelers',
+    4500,
+    '15-Year',
+    '["9H Ceramic", "10H Ceramic", "Graphene Ceramic", "Koch Ceramic", "Kovalent Ceramic"]',
     FALSE,
     1
 ),
 (
-    'Professional',
-    'Enhanced durability and shine',
-    999.00,
-    '5-Year',
-    '["2 Layers of Ceramic", "Stage 1 Paint Correction", "Hydrophobic Top Coat", "Glass Protection"]',
-    TRUE,
+    'Four Wheelers',
+    'Perfect for Four Wheelers',
+    15000,
+    '15-Year',
+    '["10H Ceramic", "Graphene Ceramic", "Koch Ceramic", "Kovalent Ceramic"]',
+    FALSE,
     2
 ),
 (
-    'Signature',
-    'Ultimate protection for life',
-    1499.00,
-    'Lifetime',
-    '["3 Layers of 9H Ceramic", "Full Paint Correction", "Wheel & Caliper Coating", "Interior Leather Protection"]',
+    'Tractors',
+    'Perfect for Tractors',
+    6500,
+    '15-Year',
+    '["Rubbingc", "Polishing", "Ceramic Coating"]',
     FALSE,
     3
 );

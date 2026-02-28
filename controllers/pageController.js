@@ -79,19 +79,19 @@ exports.getContact = (req, res) => {
 function getDefaultPackages() {
     return [
         {
-            id: 1, name: 'Essential', tagline: 'Perfect for daily drivers',
-            price: 599, duration: '2-Year', is_popular: false,
-            features: ['1 Layer of Nano Coating', 'Paint Decontamination', 'High Gloss Finish', 'Glass & Wheel Coating']
+            id: 1, name: 'Two Wheelers', tagline: 'Perfect for Two Wheelers',
+            price: 4500, duration: '15-Year', is_popular: false,
+            features: ['9H Ceramic', '10H Ceramic', 'Graphene Coating', 'Kovalent Ceramic Coating']
         },
         {
-            id: 2, name: 'Professional', tagline: 'Enhanced durability and shine',
-            price: 999, duration: '5-Year', is_popular: true,
-            features: ['2 Layers of Ceramic', 'Stage 1 Paint Correction', 'Hydrophobic Top Coat', 'Glass Protection']
+            id: 2, name: 'Four Wheelers', tagline: 'Perfect for Four Wheelers',
+            price: 15000, duration: '15-Year', is_popular: true,
+            features: ['10H Ceramic','Graphene Ceramic', 'Koch Ceramic', 'Kovalent Ceramic']
         },
         {
-            id: 3, name: 'Signature', tagline: 'Ultimate protection for life',
-            price: 1499, duration: 'Lifetime', is_popular: false,
-            features: ['3 Layers of 9H Ceramic', 'Full Paint Correction', 'Wheel & Caliper Coating', 'Interior Leather Protection']
+            id: 3, name: 'Tractors', tagline: 'Perfect for Tractors',
+            price: 6500, duration: '15 Years', is_popular: false,
+            features: ['Rubbing', 'Polishing', 'Ceramic Coating']
         }
     ];
 }

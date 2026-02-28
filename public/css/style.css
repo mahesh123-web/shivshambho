@@ -777,7 +777,7 @@ h4 {
 }
 
 .sub-options-panel.open {
-    max-height: 500px;
+    max-height: 1200px;
     opacity: 1;
     margin-top: 20px;
 }
@@ -852,6 +852,34 @@ h4 {
     font-size: 0.82rem;
     font-weight: 600;
     letter-spacing: 0.3px;
+}
+
+.sub-option-details {
+    list-style: none;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-top: 6px;
+    padding-top: 8px;
+    border-top: 1px solid var(--border);
+}
+
+.sub-option-details li {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    line-height: 1.4;
+}
+
+.sub-option-details li::before {
+    content: '✓';
+    color: var(--accent);
+    font-size: 0.65rem;
+    font-weight: 700;
+    flex-shrink: 0;
 }
 
 /* Packages info cards */
