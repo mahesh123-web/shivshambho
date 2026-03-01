@@ -2,6 +2,9 @@
 // CERAMIC COATING STUDIO — Client-Side JS
 // ============================================
 
+// Base API URL (Render backend)
+const API_BASE = "https://shivshambho.onrender.com";
+
 document.addEventListener('DOMContentLoaded', () => {
 
     // --- Navbar scroll effect ---
@@ -73,23 +76,33 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // --- Form submissions ---
-    // Booking Form
-    const bookingForm = document.getElementById('bookingForm');
-    if (bookingForm) {
-        bookingForm.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            await submitForm(bookingForm, '/api/bookings', 'bookingFeedback', 'bookingSubmit');
-        });
-    }
+   // Booking Form
+const bookingForm = document.getElementById('bookingForm');
+if (bookingForm) {
+    bookingForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        await submitForm(
+            bookingForm,
+            `${API_BASE}/api/bookings`,
+            'bookingFeedback',
+            'bookingSubmit'
+        );
+    });
+}
 
-    // Contact Form
-    const contactForm = document.getElementById('contactForm');
-    if (contactForm) {
-        contactForm.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            await submitForm(contactForm, '/api/contact', 'contactFeedback', 'contactSubmit');
-        });
-    }
+// Contact Form
+const contactForm = document.getElementById('contactForm');
+if (contactForm) {
+    contactForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        await submitForm(
+            contactForm,
+            `${API_BASE}/api/contact`,
+            'contactFeedback',
+            'contactSubmit'
+        );
+    });
+}
 
     // --- Package sub-options toggle ---
     document.querySelectorAll('.package-toggle-btn').forEach(btn => {
