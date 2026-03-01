@@ -1,9 +1,17 @@
 const express = require('express');
 const path = require('path');
+const cors = require('cors');   // ✅ ADD THIS
 require('dotenv').config();
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+
+// ✅ CORS CONFIG (IMPORTANT)
+app.use(cors({
+    origin: "https://shivshambho.vercel.app",
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true
+}));
 
 // View engine
 app.set('view engine', 'ejs');
