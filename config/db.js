@@ -5,11 +5,30 @@ const connectionString = process.env.DATABASE_URL;
 let pool;
 
 if (connectionString) {
-    console.log('Using connection string directly for production deployment...');
-    pool = new Pool({
-        connectionString,
-        ssl: { rejectUnauthorized: false }
-    });
+    let finalConnectionString = connectionString.trim();
+    if (!finalConnectionString.startsWith('postgres://') && !finalConnectionString.startsWith('postgresql://')) {
+        console.log('Adding missing postgresql:// prefix to connection string...');
+        finalConnectionString = 'postgresql://' + finalConnectionString;
+    }
+
+    console.log('Using native URL parsing for robust production deployment...');
+    try {
+        const parsedUrl = new URL(finalConnectionString);
+
+        const config = {
+            user: parsedUrl.username,
+            password: decodeURIComponent(parsedUrl.password),
+            host: parsedUrl.hostname,
+            port: parsedUrl.port ? parseInt(parsedUrl.port) : 5432,
+            database: parsedUrl.pathname ? parsedUrl.pathname.split('/')[1] : 'postgres',
+            // Explicitly enforce SSL overrides regardless of query strings
+            ssl: { rejectUnauthorized: false }
+        };
+
+        pool = new Pool(config);
+    } catch (err) {
+        console.error('Failed to parse database URL:', err);
+    }
 } else {
     console.error('⚠️  DATABASE_URL is not set!');
     pool = new Pool({
