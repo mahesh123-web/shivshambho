@@ -53,36 +53,32 @@
                                 </button>
                                 <div class="sub-options-panel" id="subPanel-pkg-<%= pkg.id %>">
                                     <div class="sub-options-grid">
-                                        <% const vehicleData={ 'Two Wheelers' : { 'Bike' : [ '₹ 2000' , '9H Ceramic'
-                                            ], 'Hatchback' : [ '₹ 3000' , '10H Ceramic' ], 'Sedan' : [ '₹ 4500'
-                                            , 'GRAPHENE MATRIX' ], 'SUV' : [ '₹ 6500' , 'BOROPHENE NEXT-GEN DURABILITY'
-                                            , 'Kovalent Ceramic Coatings' ] }, 'Four Wheelers' : { 'Bike' :
-                                            [ '₹ 6000' , 'Rubbing'
-                                            , 'Polish' ], 'Hatchback' : [ '₹ 12000'
-                                            , 'Rubbing and Polish' , 'Graphene Ceramic Coating' ], 'Sedan' :
-                                            [ '₹ 18000' , 'Rubbing and Polish'
-                                            , 'Koch Chemie Ceramic Coating' ], 'SUV' : [ '₹ 23000'
-                                            , 'GRAPHENE MATRIX' , 'Self-healing Graphene Coating' ], 'Luxury' :
-                                            [ '₹ 28000' , 'BOROPHENE NEXT-GEN DURABILITY'
-                                            , 'Kovalent Ceramic Coatings' ] }, 'Tractors' : { 'Standard' :
-                                            [ '₹ 5000' , 'Rubbing'
-                                            , 'Coating'], 'Premium' : [ '₹ 7000'
-                                            , 'Rubbing and Coating' , 'Ceramic Coating'] } }; const
-                                            vehicleTypes=vehicleData[pkg.name] || {};
+                                        <% const vehicleData={ 'Two Wheelers' : { 'Low' : [ '₹ 2000' , '9H Ceramic'
+                                            ], 'Base' : [ '₹ 3000' , '10H Ceramic' ], 'Medium' : [ '₹ 4500'
+                                            , 'GRAPHENE MATRIX' ], 'High' : [ '₹ 6500' , 'BOROPHENE NEXT-GEN DURABILITY'
+                                            , 'Kovalent Ceramic Coatings' ] }, 'Four Wheelers' : { 'Low' : [ '₹ 6000'
+                                            , 'Rubbing' , 'Polish' ], 'Base' : [ '₹ 12000' , 'Rubbing and Polish'
+                                            , 'Graphene Ceramic Coating' ], 'Medium' : [ '₹ 18000'
+                                            , 'Rubbing and Polish' , 'Koch Chemie Ceramic Coating' ], 'High' :
+                                            [ '₹ 23000' , 'GRAPHENE MATRIX' , 'Self-healing Graphene Coating'
+                                            ], 'Luxury' : [ '₹ 28000' , 'BOROPHENE NEXT-GEN DURABILITY'
+                                            , 'Kovalent Ceramic Coatings' ] }, 'Tractors' : { 'Standard' : [ '₹ 5000'
+                                            , 'Rubbing' , 'Coating' ], 'Premium' : [ '₹ 7000' , 'Rubbing and Coating'
+                                            , 'Ceramic Coating' ] } }; const vehicleTypes=vehicleData[pkg.name] || {};
                                             Object.keys(vehicleTypes).forEach(vt=> {
                                             const details = vehicleTypes[vt];
                                             %>
                                             <a href="/booking?package=<%= pkg.id %>&vehicle=<%= encodeURIComponent(vt) %>"
                                                 class="sub-option-box">
                                                 <div class="sub-option-icon">
-                                                    <% if (vt==='Bike' ) { %>
+                                                    <% if (vt==='Low' ) { %>
                                                         <svg width="28" height="28" viewBox="0 0 24 24" fill="none"
                                                             stroke="currentColor" stroke-width="1.5">
                                                             <circle cx="5" cy="18" r="3" />
                                                             <circle cx="19" cy="18" r="3" />
                                                             <path d="M12 18V6l-3 4h6" />
                                                         </svg>
-                                                        <% } else if (vt==='Hatchback' ) { %>
+                                                        <% } else if (vt==='Base' ) { %>
                                                             <svg width="28" height="28" viewBox="0 0 24 24" fill="none"
                                                                 stroke="currentColor" stroke-width="1.5">
                                                                 <rect x="2" y="13" width="20" height="5" rx="2" />
@@ -90,7 +86,7 @@
                                                                 <circle cx="7" cy="18" r="2" />
                                                                 <circle cx="17" cy="18" r="2" />
                                                             </svg>
-                                                            <% } else if (vt==='Sedan' ) { %>
+                                                            <% } else if (vt==='Medium' ) { %>
                                                                 <svg width="28" height="28" viewBox="0 0 24 24"
                                                                     fill="none" stroke="currentColor"
                                                                     stroke-width="1.5">
@@ -99,7 +95,7 @@
                                                                     <circle cx="6.5" cy="18" r="2" />
                                                                     <circle cx="17.5" cy="18" r="2" />
                                                                 </svg>
-                                                                <% } else if (vt==='SUV' ) { %>
+                                                                <% } else if (vt==='High' ) { %>
                                                                     <svg width="28" height="28" viewBox="0 0 24 24"
                                                                         fill="none" stroke="currentColor"
                                                                         stroke-width="1.5">
