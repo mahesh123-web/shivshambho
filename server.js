@@ -32,6 +32,6 @@ app.use((err, req, res, next) => {
     res.status(500).json({ error: 'Something went wrong!' });
 });
 
-app.listen(PORT, () => {
-    console.log(`🚀 Ceramic Coating Studio server running at http://localhost:${PORT}`);
+app.listen(PORT, '0.0.0.0', () => {
+    console.log(`🚀 Ceramic Coating Studio server running on port ${PORT}`);
 });
