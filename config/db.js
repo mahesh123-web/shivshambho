@@ -33,7 +33,7 @@ if (connectionString) {
     console.error('⚠️  DATABASE_URL is not set!');
     pool = new Pool({
         host: 'localhost',
-        port: 5432,
+        port: 6543,
         user: 'postgres',
         password: 'postgres',
         database: 'postgres',
