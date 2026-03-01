@@ -6,9 +6,9 @@ let pool;
 
 if (connectionString) {
     // Parse the connection string manually to handle special characters in password
-    // Format: postgresql://user:password@host:port/database
+    // Format: postgresql://user:password@host:port/database[?query]
     const match = connectionString.match(
-        /^postgresql:\/\/([^:]+):(.+)@([^:]+):(\d+)\/(.+)$/
+        /^postgresql:\/\/([^:]+):(.+)@([^/:]+):(\d+)\/([^?]+)(?:\?.*)?$/
     );
 
     if (match) {
